@@ -1,0 +1,7 @@
+name: Poll REST
+description: Allows Poll to work with REST.
+core: 8.x
+type: module
+dependencies:
+  - poll
+  - rest
