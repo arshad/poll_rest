@@ -8,7 +8,7 @@ Drupal 8 Poll + REST
 4. Save.
 
 ### Usage
-Make a post request to `/api/v1/poll/1/vote?_format=json` with the following payload:
+Make a post request to `/api/v1/poll/1/vote?_format=json`, where `1` the the poll id, with the following payload:
 
 ```
 {
