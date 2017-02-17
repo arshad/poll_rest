@@ -12,6 +12,6 @@ Make a post request to `/api/v1/poll/1/vote?_format=json`, where `1` the the pol
 
 ```
 {
-	"chid": 2
+    "chid": 2
 }
 ```
