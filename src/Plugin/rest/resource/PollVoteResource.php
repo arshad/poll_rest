@@ -113,6 +113,17 @@ class PollVoteResource extends ResourceBase {
     /** @var PollInterface $poll */
     $poll = Poll::load($pid);
 
+    // Check if user has already voted
+    if ($poll->hasUserVoted()) {
+      return new ModifiedResourceResponse([ 'message' => 'User has already voted'], 401);
+    }
+
+    // Validate the choice
+    $choices = $poll->getOptions();
+    if(!isset($choices[$data['chid']])) {
+      return new ModifiedResourceResponse([ 'message' => 'Invalid Choice'], 400);
+    }
+    
     $options = [];
     $options['chid'] = $data['chid'];
     $options['uid'] = $this->account->id();
